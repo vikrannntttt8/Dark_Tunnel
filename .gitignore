@@ -1,0 +1,33 @@
+# Binaries & build artifacts
+bin/
+dist/
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+*.test
+*.out
+
+# Go cache / vendor
+vendor/
+
+# Private keys & credentials (NEVER commit secrets!)
+*.key
+*.priv
+*.pem
+*.env
+secrets/
+client_private.key
+server_private.key
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE & editors
+.idea/
+.vscode/
+*.swp
+*~

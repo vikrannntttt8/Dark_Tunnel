@@ -1,0 +1,33 @@
+# Dark Tunnel Client Configuration
+# Reference: docs/PRD.md FR-2
+
+client:
+  # Base64-encoded static private key (Curve25519)
+  # Generate using: tunnel genkey
+  private_key: "CLIENT_PRIVATE_KEY_BASE64_HERE"
+
+  # Tunnel adapter address assigned to this client
+  tunnel_ip: "10.7.0.2/24"
+  mtu: 1420
+
+  # Remote server gateway
+  server:
+    # Public IP / Domain and UDP port of the Dark Tunnel server
+    endpoint: "203.0.113.10:51820"
+
+    # Base64-encoded static public key of the server
+    public_key: "SERVER_PUBLIC_KEY_BASE64_HERE"
+
+  # Network routing configuration
+  routing:
+    # Route all internet traffic through the tunnel
+    full_tunnel: true
+    # Primary & fallback DNS servers to enforce while connected
+    dns_servers:
+      - "1.1.1.1"
+      - "8.8.8.8"
+
+  # Embedded Web UI configuration
+  ui:
+    enabled: true
+    listen_address: "127.0.0.1:8080"

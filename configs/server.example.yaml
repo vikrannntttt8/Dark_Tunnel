@@ -1,0 +1,27 @@
+# Dark Tunnel Server Configuration
+# Reference: docs/PRD.md FR-2
+
+server:
+  # UDP listen address and port
+  listen_address: "0.0.0.0:51820"
+
+  # Base64-encoded static private key (Curve25519)
+  # Generate using: tunnel genkey
+  private_key: "SERVER_PRIVATE_KEY_BASE64_HERE"
+
+  # TUN device settings
+  interface_name: "tun0"
+  tunnel_ip: "10.7.0.1/24"
+  mtu: 1420
+
+  # Authorized client peers
+  peers:
+    - name: "client-laptop-1"
+      # Base64-encoded static public key of the client
+      public_key: "CLIENT_1_PUBLIC_KEY_BASE64_HERE"
+      # Assigned IP inside the VPN tunnel
+      allowed_ip: "10.7.0.2/32"
+
+    - name: "client-laptop-2"
+      public_key: "CLIENT_2_PUBLIC_KEY_BASE64_HERE"
+      allowed_ip: "10.7.0.3/32"
